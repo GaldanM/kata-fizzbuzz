@@ -29,4 +29,11 @@ describe("fizzBuzz", () => {
 
     expect(output).toStrictEqual("Fizz");
   });
+  it("number 9 should return Fizz", () => {
+    const input = 9;
+
+    const output = fizzbuzz(input);
+
+    expect(output).toStrictEqual("Fizz");
+  });
 });
