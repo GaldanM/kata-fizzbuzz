@@ -1,13 +1,19 @@
 function fizzbuzz(input: number): number | string {
-  if (input % 3 === 0) {
+  const isDivisibleBy3 = checkIfDivisibleBy(input, 3);
+  if (isDivisibleBy3) {
     return "Fizz";
   }
 
-  if (input % 5 === 0) {
+  const isDivisibleBy5 = checkIfDivisibleBy(input, 5);
+  if (isDivisibleBy5) {
     return "Buzz";
   }
 
   return input;
+}
+
+function checkIfDivisibleBy(number: number, divisibleBy: number): boolean {
+  return number % divisibleBy === 0;
 }
 
 export default fizzbuzz;
