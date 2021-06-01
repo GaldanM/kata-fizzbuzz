@@ -22,4 +22,11 @@ describe("fizzBuzz", () => {
 
     expect(output).toStrictEqual("Fizz");
   });
+  it("number 6 should return Fizz", () => {
+    const input = 6;
+
+    const output = fizzbuzz(input);
+
+    expect(output).toStrictEqual("Fizz");
+  });
 });
