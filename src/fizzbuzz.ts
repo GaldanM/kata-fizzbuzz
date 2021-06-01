@@ -1,5 +1,5 @@
 function fizzbuzz(input: number): number {
-  return 1;
+  return input;
 }
 
 export default fizzbuzz;
