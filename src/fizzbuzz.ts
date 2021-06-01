@@ -1,20 +1,23 @@
-function fizzbuzz(input: number): number | string {
-  const isDivisibleBy3 = checkIfDivisibleBy(input, 3);
-  const isDivisibleBy5 = checkIfDivisibleBy(input, 5);
+type FizzBuzzRule = (input: number) => boolean;
+type FizzBuzzRules = Record<string, FizzBuzzRule>;
 
-  if (isDivisibleBy3 && isDivisibleBy5) {
-    return "FizzBuzz";
-  } else if (isDivisibleBy3) {
-    return "Fizz";
-  } else if (isDivisibleBy5) {
-    return "Buzz";
+function fizzbuzzFactory(rules: FizzBuzzRules): (input: number) => number | string {
+  return fizzbuzz;
+
+  function fizzbuzz(input: number): number | string {
+    const concatenatedWords = Object.entries(rules).reduce<string[]>((accumulator, [word, condition]) => {
+      if (condition(input)) {
+        accumulator.push(word);
+      }
+      return accumulator;
+    }, []);
+
+    if (concatenatedWords.length === 0) {
+      return input;
+    }
+
+    return concatenatedWords.join("");
   }
-
-  return input;
 }
 
-function checkIfDivisibleBy(number: number, divisibleBy: number): boolean {
-  return number % divisibleBy === 0;
-}
-
-export default fizzbuzz;
+export default fizzbuzzFactory;

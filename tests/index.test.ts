@@ -1,6 +1,12 @@
-import fizzbuzz from "../src/fizzbuzz";
+import fizzbuzzFactory from "../src/fizzbuzz";
 
-function testFizzBuzz(input: number, expectedOutput: number | string) {
+function testFizzBuzz(input: number, expectedOutput: number | string): void {
+  const rules = {
+    Fizz: (int: number) => int % 3 === 0,
+    Buzz: (int: number) => int % 5 === 0,
+  };
+  const fizzbuzz = fizzbuzzFactory(rules);
+
   const output = fizzbuzz(input);
 
   expect(output).toStrictEqual(expectedOutput);
