@@ -25,4 +25,7 @@ describe("fizzBuzz", () => {
   it("number 5 should return Buzz", () => {
     testFizzBuzz(5, "Buzz");
   });
+  it("number 10 should return Buzz", () => {
+    testFizzBuzz(10, "Buzz");
+  });
 });

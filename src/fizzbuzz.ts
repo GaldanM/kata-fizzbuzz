@@ -3,7 +3,7 @@ function fizzbuzz(input: number): number | string {
     return "Fizz";
   }
 
-  if (input === 5) {
+  if (input % 5 === 0) {
     return "Buzz";
   }
 
