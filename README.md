@@ -32,3 +32,15 @@ myFizzbuzzFunction(3); // returns "FizzBuzz"
 ## Test
 
 `npm run test`
+
+## Testing {.tabset}
+
+Hmhm
+
+### Class
+
+Mdr
+
+### Function
+
+Lolz
